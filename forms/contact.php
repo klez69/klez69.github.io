@@ -40,15 +40,14 @@
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
 
-  // Odkomentuj poniższy kod, jeśli chcesz używać SMTP do wysyłania e-maili. Musisz wprowadzić poprawne dane uwierzytelniające SMTP
-  /*
+  
   $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
+    'host' => 'gmail.com',
+    'username' => 'klez69',
     'password' => 'pass',
     'port' => '587'
   );
-  */
+ 
 
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
