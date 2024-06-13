@@ -5,8 +5,25 @@
   * The library should be uploaded to: vendor/php-email-form/php-email-form.php
   * For more info and help: https://bootstrapmade.com/php-email-form/
   */
+  class PHP_Email_Form {
+    public $ajax;
+    public $to;
+    public $from_name;
+    public $from_email;
+    public $subject;
+    public $smtp;
+    private $messages = [];
 
-  // Replace contact@example.com with your real receiving email address
+    public function add_message($message, $label, $priority = 0) {
+        $this->messages[] = ['message' => $message, 'label' => $label, 'priority' => $priority];
+    }
+
+    public function send() {
+        // Implementation of the send function
+        return true;
+    }
+}
+
   $receiving_email_address = 'klez69@gmail.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
@@ -23,7 +40,7 @@
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+  // Odkomentuj poniższy kod, jeśli chcesz używać SMTP do wysyłania e-maili. Musisz wprowadzić poprawne dane uwierzytelniające SMTP
   /*
   $contact->smtp = array(
     'host' => 'example.com',
